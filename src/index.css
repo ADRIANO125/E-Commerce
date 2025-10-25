@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+/* Tailwind Configurations */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(151, 156, 181, 0.373) 0%,
+    rgba(243, 244, 246, 0.301) 100%
+  );
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #437ddc;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
