@@ -129,15 +129,6 @@ venom-ecommerce/
 
 ---
 
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_BASE_URL=your_api_url_here
-VITE_API_KEY=your_api_key_here
-```
 
 ### Tailwind Configuration
 Customize colors, fonts, and breakpoints in `tailwind.config.js`
@@ -194,64 +185,6 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
----
-
-## 🙏 Acknowledgments
-
-- Design inspiration from modern e-commerce platforms
-- Icons by [React Icons](https://react-icons.github.io/react-icons/)
-- Deployed on [Netlify](https://www.netlify.com/)
-
----
-
-## 📸 Screenshots
-
-### Home Page
-![Home Page](screenshots/home.png)
-
-### Products
-![Products Page](screenshots/products.png)
-
-### Shopping Cart
-![Cart](screenshots/cart.png)
-
-### Product Details
-![Product Details](screenshots/product-detail.png)
-
----
-
-## 🐛 Bug Reports
-
-Found a bug? Please open an issue [here](https://github.com/yourusername/venom-ecommerce/issues) with detailed information.
-
----
-
-## 📈 Future Enhancements
-
-- [ ] Product reviews and ratings
-- [ ] Advanced search with filters
-- [ ] Payment gateway integration
-- [ ] Multi-language support
-- [ ] Dark/Light theme toggle
-- [ ] Progressive Web App (PWA)
-- [ ] Social media integration
-- [ ] Live chat support
 
 ---
 
