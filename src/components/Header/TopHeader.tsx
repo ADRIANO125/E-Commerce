@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../../assets/logo.png";
-import { FiSearch, FiUser, FiHeart, FiShoppingCart } from "react-icons/fi";
+import { FiSearch,FiHeart, FiShoppingCart } from "react-icons/fi";
 import { CartContext } from "../../Context/CartContext";
 
 interface SearchResult {

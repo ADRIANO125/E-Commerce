@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import {
   FaPlus,
@@ -7,6 +7,7 @@ import {
   FaShoppingCart,
   FaCreditCard,
 } from "react-icons/fa";
+
 
 function Cart() {
   const { cartItems, IncreaseQuantity, DecreaseQuantity, DeleteItems } =

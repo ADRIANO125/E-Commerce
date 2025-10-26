@@ -7,6 +7,24 @@ export interface CartItem {
   title: string;
   price: number;
   quantity?: number;
+  image?: string;
+  category?: string;
+  description?: string;
+  rating?: {
+    rate: number;
+    count: number;
+  };
+  reviews?: string[];
+  brand?: string;
+  stock?: number;
+  color?: string;
+  size?: string;
+  discountPercentage?: number;
+  thumbnail?: string;
+  images?: string[];
+  discount?: number;
+  discountedPrice?: number;
+
 }
 
 // ✅ نوع الـContext

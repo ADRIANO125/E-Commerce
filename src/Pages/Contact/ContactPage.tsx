@@ -1,4 +1,3 @@
-import React from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 function ContactPage() {
@@ -46,7 +45,6 @@ function ContactPage() {
                 Message
               </label>
               <textarea
-                rows="5"
                 placeholder="Type your message here..."
                 className="w-full px-4 py-3 rounded-lg border border-[#A3CEF1] focus:outline-none focus:ring-2 focus:ring-[#6096BA] transition resize-none"
               ></textarea>

@@ -11,7 +11,9 @@ body {
     90deg,
     rgba(151, 156, 181, 0.373) 0%,
     rgba(243, 244, 246, 0.301) 100%
+    
   );
+  overflow-x: hidden;
 }
 * {
   margin: 0;

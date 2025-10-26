@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FaSearch, FaStar } from "react-icons/fa";
 
+type Product = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  thumbnail: string;
+};
+
 function SearchBar() {
   const query = new URLSearchParams(useLocation().search).get("query");
   const [loading, setLoading] = useState(true);
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<Product[]>([]);
 
   useEffect(() => {
     if (!query) {

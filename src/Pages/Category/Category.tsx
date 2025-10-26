@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -21,7 +21,7 @@ function CategoryPage() {
   const [priceFilter, setPriceFilter] = useState("all");
   const [ratingFilter, setRatingFilter] = useState("all");
   const [sortBy, setSortBy] = useState("default");
-  
+
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
@@ -31,13 +31,13 @@ function CategoryPage() {
       try {
         setLoading(true);
         let url = "";
-        
+
         if (category === "all") {
           url = "https://dummyjson.com/products?limit=100";
         } else {
           url = `https://dummyjson.com/products/category/${category}`;
         }
-        
+
         const res = await axios.get(url);
         setAllProducts(res.data.products || []);
         setFilteredProducts(res.data.products || []);
@@ -66,7 +66,9 @@ function CategoryPage() {
     if (priceFilter === "under50") {
       filtered = filtered.filter((product) => product.price < 50);
     } else if (priceFilter === "50to100") {
-      filtered = filtered.filter((product) => product.price >= 50 && product.price <= 100);
+      filtered = filtered.filter(
+        (product) => product.price >= 50 && product.price <= 100
+      );
     } else if (priceFilter === "above100") {
       filtered = filtered.filter((product) => product.price > 100);
     }
@@ -75,7 +77,9 @@ function CategoryPage() {
     if (ratingFilter === "4plus") {
       filtered = filtered.filter((product) => product.rating >= 4);
     } else if (ratingFilter === "3to4") {
-      filtered = filtered.filter((product) => product.rating >= 3 && product.rating < 4);
+      filtered = filtered.filter(
+        (product) => product.rating >= 3 && product.rating < 4
+      );
     }
 
     // Sorting
@@ -94,7 +98,10 @@ function CategoryPage() {
   // Pagination logic
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
@@ -113,7 +120,9 @@ function CategoryPage() {
   return (
     <div className="min-h-screen py-8 px-4 md:px-8 lg:px-16 bg-gray-50">
       <h1 className="text-4xl font-bold text-blue-600 mb-8 capitalize">
-        {category === "all" ? "All Products" : category.replace("-", " ")}
+        {category === "all" || !category
+          ? "All Products"
+          : category.replace("-", " ")}
       </h1>
 
       {/* Search Bar */}
@@ -130,7 +139,7 @@ function CategoryPage() {
       {/* Filters */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-lg font-semibold text-gray-800 mb-4">Filters</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Price Filter */}
           <div>
@@ -255,33 +264,39 @@ function CategoryPage() {
                 Previous
               </button>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                if (
-                  page === 1 ||
-                  page === totalPages ||
-                  (page >= currentPage - 1 && page <= currentPage + 1)
-                ) {
-                  return (
-                    <button
-                      key={page}
-                      onClick={() => handlePageChange(page)}
-                      className={`px-4 py-2 rounded-lg transition-colors ${
-                        currentPage === page
-                          ? "bg-blue-600 text-white"
-                          : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
-                      }`}
-                    >
-                      {page}
-                    </button>
-                  );
-                } else if (
-                  page === currentPage - 2 ||
-                  page === currentPage + 2
-                ) {
-                  return <span key={page} className="px-2">...</span>;
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => {
+                  if (
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  ) {
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`px-4 py-2 rounded-lg transition-colors ${
+                          currentPage === page
+                            ? "bg-blue-600 text-white"
+                            : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  } else if (
+                    page === currentPage - 2 ||
+                    page === currentPage + 2
+                  ) {
+                    return (
+                      <span key={page} className="px-2">
+                        ...
+                      </span>
+                    );
+                  }
+                  return null;
                 }
-                return null;
-              })}
+              )}
 
               <button
                 onClick={() => handlePageChange(currentPage + 1)}

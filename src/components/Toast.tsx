@@ -1,5 +1,4 @@
 import toast, { type ToastOptions } from "react-hot-toast";
-import React from "react";
 import {
   FaCheckCircle,
   FaExclamationTriangle,
@@ -19,7 +18,6 @@ export const showToast = ({
   image,
   type = "success",
   duration = 3500,
-  showButton = true,
 }: ShowToastOptions) => {
   const getStyles = (): ToastOptions["style"] => {
     return {

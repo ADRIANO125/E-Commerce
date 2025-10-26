@@ -1,4 +1,3 @@
-import React from "react";
 import { FaClock, FaUserAlt, FaArrowRight } from "react-icons/fa";
 
 function BlogPage() {
